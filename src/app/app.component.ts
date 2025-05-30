@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { EstacionesComponent } from './estaciones/estaciones.component'; // 👈 Asegúrate de importar esto
 
 @Component({
+  standalone: true,
   selector: 'app-root',
+  imports: [RouterModule, EstacionesComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'prueba-canal-clima';
-}
+export class AppComponent {}

@@ -1,26 +1,18 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
-import { AppRoutingModule } from './app-routing.module';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { EstacionesComponent } from './estaciones/estaciones.component';
+import { provideRouter } from '@angular/router';
+import { routes } from './app-routing.module';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { EstacionesService } from './service/estaciones.service';
+import { AuthService } from './service/auth.service';
 
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    EstacionesComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+bootstrapApplication(AppComponent, {
   providers: [
+    provideRouter(routes),
     provideClientHydration(),
-
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+    provideHttpClient(),
+    EstacionesService,
+    AuthService
+  ]
+}).catch(err => console.error(err));
