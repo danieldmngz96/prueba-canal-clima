@@ -1,0 +1,39 @@
+<div class="container py-4">
+  <div *ngIf="cargando" class="alert alert-primary d-flex align-items-center">
+    <div class="spinner-border me-2" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    Cargando estaciones...
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!cargando && !error && estaciones.length > 0" class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Latitud</th>
+          <th scope="col">Longitud</th>
+          <th scope="col">País</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estacion of estaciones">
+          <td>{{ estacion.stationId }}</td>
+          <td>{{ estacion.name }}</td>
+          <td>{{ estacion.latitude }}</td>
+          <td>{{ estacion.longitude }}</td>
+          <td>{{ estacion.country }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!cargando && !error && estaciones.length === 0" class="alert alert-warning">
+    No hay estaciones disponibles
+  </div>
+</div>
