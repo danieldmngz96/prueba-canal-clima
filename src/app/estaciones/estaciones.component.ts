@@ -41,5 +41,6 @@ export class EstacionesComponent implements OnInit {
   }
   irDashboard() {
     this.router.navigate(['/dashboard']);
+    console.log('Navegando a /dashboard' );
   }
 }

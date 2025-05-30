@@ -1,6 +1,6 @@
 {
   "name": "prueba-canal-clima",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,8 +22,12 @@
     "@angular/router": "^17.2.0",
     "@angular/ssr": "^17.2.3",
     "@popperjs/core": "^2.11.8",
+    "@types/leaflet": "^1.9.18",
     "bootstrap": "^5.3.6",
+    "chart.js": "^4.4.1",
     "express": "^4.18.2",
+    "leaflet": "^1.9.4",
+    "ng2-charts": "^5.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
